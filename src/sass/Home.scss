@@ -1,0 +1,213 @@
+
+#header{
+    // border: 1px solid #fff;
+    border-radius: 0px 0px 10px 10px;
+    width: 851px;
+    height: 315px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 0px 25px;
+    padding-bottom: 1em;
+    background: #3a9869;
+    overflow: hidden;
+    position: relative;
+
+    #video{
+        position: absolute;
+        top: 0;
+        left:0;
+        transform: scale(1.1);
+        // z-index: ;
+    }
+
+    #contentProfile{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        z-index: 10;
+        &_image{
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(to top, #7300ff,#ff00ee,);
+            img{
+                width: 100px;
+                border-radius: 50%;
+            }
+        }
+        &_text{
+            h5{
+                font-size: 20px;
+                font-weight: 800;
+                color: #eee;
+            }
+            span{
+                font-size: 14px;
+                font-weight: 800;
+                letter-spacing: 1px;
+                color: #8828ff;
+                background: #fff;
+                padding: 2px 5px;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+#main{
+    width: 851px;
+    display: flex;
+    gap: 20px;
+
+    #projectContent, #mockup{
+        width: 425.5px;
+        height: 250px;
+        margin-top: 15px;
+        border-radius: 10px;
+        background: #7300ff11;
+        .labels{
+            position: absolute;
+            top: 0;
+            color: #8828ff;
+            background: #fff;
+            padding: 0px 10px;
+            font-size: 15px;
+            font-weight: 800;
+        }
+    }
+    #projectContent{
+        position: relative;
+        overflow: hidden;
+        
+        .labels{
+            left:0;
+            border-radius: 0px 0px 10px 0px;
+        } 
+
+        article{
+            width: 410px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding-left: .5px;
+            transition: transform .3s ease;
+            button{
+                margin: 0px 15px;
+                img{
+                    width: 180px;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        .buttons{
+            outline: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: #ffffffa0;
+            z-index: 10;
+            transition: width .3s ease, height .3s ease;
+            &:last-child{
+                right: 0;
+            }
+            &:hover{
+                background: #ffffffd5;
+            }
+            &:active{
+                width: 53px;
+                height: 53px;
+            }
+
+        }
+    }
+    #mockup{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+
+        .labels{
+            right:0;
+            border-radius: 0px 0px 0px 10px;
+        } 
+
+        article{
+            #imageBeforeMockup{
+                position: absolute;
+                width: 200px;
+                z-index: 10;
+                transform: translate(43px,16px);
+                border-radius: 2px;
+            }
+            #imageMockup{
+                z-index: -10;
+                width: 350px;
+                transform: translateX(20px);
+            }
+        }
+    }
+}
+
+@media(max-width: 1024px){
+    #header{
+        #video{
+            top: 0;
+            left: -100px;
+            // z-index: ;
+        }
+    }
+    #header,#main{
+        width: 700px;
+    }
+
+    #main{
+        #projectContent, #mockup{
+            width: 350px;
+        }
+    }
+}
+
+
+@media(max-width: 740px){
+    #header{
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        #video{
+            top: 0;
+            left: -250px;
+            transform: scale(1);
+            // z-index: ;
+        }
+
+        #contentProfile{
+            flex-direction: column;
+            gap:0;
+            &_text{
+                text-align: center;
+                h5{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    #header,#main{
+        width: 100%;
+    }
+
+    #main{
+        flex-direction: column;
+        gap: 0;
+        #projectContent, #mockup{
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+}
