@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react"
 import {
     FaAngleLeft,
     FaAngleRight,
@@ -9,8 +10,7 @@ import ContraBadge from "../components/ContraBadge"
 //asset.
 import Profile from "../assets/profile.png"
 import Mockup from "../assets/mockup.png"
-import { useState, useEffect } from "react"
-
+import VideoHome from "../assets/This.mp4"
 // add two elements forever.
 const arrayCover = [1,2,3,4,5,6,7,8,9,10,11,12];
 function Home(){
@@ -48,7 +48,7 @@ function Home(){
                 profile image. 
             */}
             {/* <button></button> */}
-            <video muted autoPlay loop id="video" src="/public/This.mp4" ></video>
+            <video muted autoPlay loop id="video" src={VideoHome} ></video>
 
             <div id="contentProfile">
                 {/*  */}
